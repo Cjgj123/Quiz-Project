@@ -143,7 +143,6 @@ function updateProgress() {
     progressElement.style.width = `${progress}%`;
 }
 
-
 // Event listeners for quick links
 document.getElementById('gluten-quiz').addEventListener('click', function() {
     selectQuiz('Gluten.csv');

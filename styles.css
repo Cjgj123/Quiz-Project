@@ -60,7 +60,7 @@ nav a:hover, nav a:focus {
 .hamburger div {
     width: 30px;
     height: 3px;
-    background-color: #000; /* Black bars */
+    background-color: #000; 
     margin: 5px 0;
 }
 
