@@ -1,0 +1,121 @@
+styles.css 
+/* General styles: These are used for all the pages */
+body, html {
+ font-family: Arial, Helvetica, sans-serif;
+ margin: 0;
+ padding: 0;
+ background-color: #e5e0d5;
+}
+
+
+
+
+
+/* Navigation styles: Used for teh top of all the pages */
+nav {
+    background-color: rgb(49, 29, 10);
+    display: flex;
+    justify-content: center;
+}
+nav ul {
+    list-style-type: none ;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav li {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #e64d10;
+    font-weight: bold;
+}
+nav li a-hover {
+    background-color: rgb(33, 10, 247);
+    border-radius: 5px;
+}
+nav li a{
+color:white ;
+}
+
+/*side-bar*/
+side-bar {
+width: 150px;
+height: 100vh;
+background-color: aqua;
+float: left;
+padding: 20px;
+box-sizing: border-box;
+}
+
+
+/*main content area*/
+.main-question-section{ 
+margin-left: 200px;
+padding: 20px;
+box-sizing: border-box;
+}
+.title-section{
+text-align: center;
+margin-bottom: 50px;
+}
+.question-box{
+    background-color: rgb(255, 0, 0);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+.answer-box{
+   width:30% ;
+   padding: 20px;
+   background-color: aqua;
+   color: #ffffff;
+   text-align: center;
+   border-radius: 10px;
+   cursor: pointer;
+   font-size: 18px;
+}
+.answer-box.blue{
+    background-color: blue;
+}
+.answer-box.red{
+    background-color: rgb(255, 0, 0);
+}
+.answer-box.green{
+    background-color: rgb(0, 255, 0);
+}
+.answer-box.pink{
+    background-color: rgb(255, 0, 255);
+}
+.answer-box.hover{
+    background-color: rgb(251, 255, 0);
+    transition: background-color 0.3s ease;
+}
+.progres-section{
+ margin-top: 20px;
+
+}
+.progres-bar{
+    width: 100%;
+    background-color: #ddd;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.progres{
+    width: 0;
+    height: 20px;
+    background-color: aquamarine;
+    transition: width 0.5s ease;
+}
+.timer{
+    font-size: 18px;
+    color: brown;
+    text-align: center;
+}
+
+
+
+
