@@ -7,29 +7,45 @@
     <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
+
 <!-- Navigation -->
 <nav>
-    <ul>
-        <li><a href="quiz-home.html">HOME</a></li>
+    <ul class="menu">
+        <li><a href="index.html">HOME</a></li>
         <li><a href="quiz.html">QUIZ</a></li>
         <li><a href="about.html">ABOUT</a></li>
         <li><a href="credits.html">CREDITS</a></li>
     </ul>
+    <!-- Hamburger icon for mobile -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 </nav>
 
-<!-- Side-bar -->
-<side-bar>
-    <ul>
-        <li><a href="#">Quick Links 1</a></li>
-        <li><a href="#">Quick Links 2</a></li>
-        <li><a href="#">Quick Links 3</a></li>
-    </ul>
-</side-bar>
+<!-- Mobile dropdown menu -->
+<ul class="mobile-menu" id="mobile-menu">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="quiz.html">QUIZ</a></li>
+    <li><a href="about.html">ABOUT</a></li>
+    <li><a href="credits.html">CREDITS</a></li>
+</ul>
 
-<div class="credits content">
-    <h2>contribution and more</h2>
-    <p> creator cooper jones</p>
-    <p>reqested by kings collage</p>
+<!-- Main content -->
+<div class="main-section">
+    <h2>Contributions and More</h2>
+    <p>Created by: Cooper Jones</p>
+    <p>Requested by: King's College</p>
 </div>
+
+<script>
+    // Toggle hamburger menu for mobile
+    function toggleMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('active');
+    }
+</script>
+
 </body>
 </html>

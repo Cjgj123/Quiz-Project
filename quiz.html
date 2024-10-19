@@ -3,69 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dietary Quiz</title>
-    <link rel="stylesheet" href="styles.css"/>
+    <title>Diet Quiz</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
 <!-- Navigation -->
 <nav>
-    <ul>
-        <li><a href="quiz-home.html">HOME</a></li>
+    <ul class="menu">
+        <li><a href="index.html">HOME</a></li>
         <li><a href="quiz.html">QUIZ</a></li>
         <li><a href="about.html">ABOUT</a></li>
         <li><a href="credits.html">CREDITS</a></li>
     </ul>
+    <!-- Hamburger icon for mobile -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 </nav>
 
-<!-- Side-bar -->
-<side-bar>
-    <ul>
-        <li><a href="#">Quick Links 1</a></li>
-        <li><a href="#">Quick Links 2</a></li>
-        <li><a href="#">Quick Links 3</a></li>
-    </ul>
-</side-bar>
+<!-- Mobile dropdown menu -->
+<ul class="mobile-menu" id="mobile-menu">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="quiz.html">QUIZ</a></li>
+    <li><a href="about.html">ABOUT</a></li>
+    <li><a href="credits.html">CREDITS</a></li>
+</ul>
 
-<!-- Main Quiz Area -->
+<!-- Main Question Section -->
 <div class="main-question-section">
-
-    <!-- Title Section -->
     <div class="title-section">
         <h1 class="main-title">Dietary Quiz</h1>
     </div>
 
-    <!-- Start Quiz Button -->
-    <div id="start-quiz-section">
-        <button class="start-button" id="start-quiz">Start Quiz Now</button>
+    <div class="question-box" id="question-box">
+        <!-- Question will be dynamically inserted here by JS-->
     </div>
 
-    <!-- Question Area (Hidden initially) -->
-    <div class="question-box" id="question-box" style="display: none;">
-        <!-- JavaScript will insert questions here -->
+    <div class="answer-boxes" id="answer-boxes">
+        <!-- Answer buttons will be dynamically inserted here by JS-->
     </div>
 
-    <!-- Answer Area (Hidden initially) -->
-    <div class="answer-box" id="answer-box" style="display: none;">
-        <!-- JavaScript will insert answer options here -->
-    </div>
-
-    <!-- Progress and Timer (Hidden initially) -->
-    <div class="progress-section" id="progress-section" style="display: none;">
+    <!-- Progress Bar and Timer Section -->
+    <div class="progress-section">
         <div class="progress-bar">
             <div class="progress" id="progress"></div>
         </div>
         <div class="timer" id="timer">Time: 00:00</div>
     </div>
 
-    <!-- Results Section (Hidden initially) -->
     <div class="result-section" id="result-section" style="display: none;">
-        <h2>Your Score</h2>
+        <h2>Your score</h2>
         <p id="final-score"></p>
-        <button class="button" id="retake-quiz">Retake Quiz</button>
+        <p id="accumulated-score"></p> <!-- Display accumulated score -->
+        <button class="button" id="retake-quiz" onclick="resetQuiz()">Retake Quiz</button>
     </div>
 </div>
 
-<!-- JavaScript to Handle Quiz Logic -->
+<!-- Quicklinks for different quizzes -->
+<div class="quicklinks">
+    <a href="#" onclick="selectQuiz('Gluten.csv')">Gluten Quiz</a>
+    <a href="#" onclick="selectQuiz('FoodAllergies.csv')">Food Allergies Quiz</a>
+    <a href="#" onclick="selectQuiz('HealthySnacking.csv')">Healthy Snacking Quiz</a>
+    <a href="#" onclick="selectQuiz('Balanceddiet.csv')">Balanced Diet Quiz</a>
+</div>
+
+<!-- Script to manage quiz and menu -->
 <script src="quiz.js"></script>
+
+<script>
+    // Toggle hamburger menu for mobile
+    function toggleMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('active');
+    }
+
+    // Automatically load the quiz when the page is opened
+    window.onload = function() {
+        currentQuiz = 'Gluten.csv';  // Set the default quiz to Gluten.csv
+        loadQuizData(showQuestion);  // Load the quiz and show the first question
+    };
+</script>
+
 </body>
 </html>
