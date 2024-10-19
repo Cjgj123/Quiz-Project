@@ -5,18 +5,18 @@ let timerInterval;
 
 // Load CSV and initialize quiz
 function loadCSVData(callback) {
-    fetch('questions.csv')
+    fetch('Quiz1.csv')
         .then(response => response.text())
         .then(data => {
             const rows = data.split('\n');
-            for (let i = 1; i < rows.length; i++) { // Skip the header
+            for (let i = 1; i < rows.length; i++) { // Skip the header row
                 const cols = rows[i].split(',');
                 if (cols.length > 1) {
                     questions.push({
                         questionNumber: cols[0],
                         questionText: cols[1],
                         answers: [cols[2], cols[3], cols[4], cols[5]],
-                        correctAnswer: parseInt(cols[6])
+                        correctAnswer: parseInt(cols[6]) // Assuming the correct answer is the index (1-4)
                     });
                 }
             }
@@ -24,13 +24,20 @@ function loadCSVData(callback) {
         });
 }
 
+function startQuiz() {
+    document.getElementById('start-quiz-section').style.display = 'none';
+    document.getElementById('question-box').style.display = 'block';
+    document.getElementById('answer-box').style.display = 'block';
+    document.getElementById('progress-section').style.display = 'block';
+    showQuestion();
+}
+
 function showQuestion() {
     if (currentQuestionIndex < questions.length) {
         const question = questions[currentQuestionIndex];
-        document.getElementById('question-title').textContent = `Question ${question.questionNumber}`;
         document.getElementById('question-box').innerHTML = `<p>${question.questionText}</p>`;
-        
-        const answerContainer = document.getElementById('answer-boxes');
+
+        const answerContainer = document.getElementById('answer-box');
         answerContainer.innerHTML = '';
         question.answers.forEach((answer, index) => {
             const answerDiv = document.createElement('div');
@@ -85,10 +92,14 @@ function updateProgress() {
 function endQuiz() {
     stopTimer();
     document.getElementById('question-box').innerHTML = '<p>Quiz Complete!</p>';
-    document.getElementById('answer-boxes').innerHTML = '';
+    document.getElementById('answer-box').innerHTML = '';
     document.getElementById('result-section').style.display = 'block';
     document.getElementById('final-score').textContent = `You scored ${score} out of ${questions.length}`;
 }
+
+document.getElementById('start-quiz').addEventListener('click', () => {
+    loadCSVData(startQuiz);
+});
 
 document.getElementById('retake-quiz').addEventListener('click', () => {
     currentQuestionIndex = 0;
@@ -96,9 +107,3 @@ document.getElementById('retake-quiz').addEventListener('click', () => {
     document.getElementById('result-section').style.display = 'none';
     showQuestion();
 });
-
-window.onload = function() {
-    loadCSVData(showQuestion);
-};
-
-

@@ -1,0 +1,6 @@
+QuestionNumber,QuestionText,Answer1,Answer2,Answer3,Answer4,CorrectAnswerIndex
+1,What is gluten?,A protein found in wheat,A type of sugar,A vitamin,A mineral,1
+2,Which of the following foods should people with gluten intolerance avoid?,Bread,Bananas,Chicken,Milk,1
+3,What is celiac disease?,An allergy to peanuts,A condition where the body can't process gluten,A virus,A type of flu,2
+4,Which of these grains contains gluten?,Rice,Quinoa,Barley,Corn,3
+5,What is a common symptom of gluten intolerance?,Headache,Skin rash,Stomach pain,All of the above,4

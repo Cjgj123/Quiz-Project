@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dietary Quiz - Quiz</title>
+    <title>Dietary Quiz</title>
     <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-
-<!--navigation-->
+<!-- Navigation -->
 <nav>
     <ul>
         <li><a href="index.html">HOME</a></li>
@@ -18,7 +17,7 @@
     </ul>
 </nav>
 
-<!--side-bar-->
+<!-- Side-bar -->
 <side-bar>
     <ul>
         <li><a href="#">Quick Links 1</a></li>
@@ -27,34 +26,46 @@
     </ul>
 </side-bar>
 
-<!--Main Body-->
+<!-- Main Quiz Area -->
 <div class="main-question-section">
+
+    <!-- Title Section -->
     <div class="title-section">
         <h1 class="main-title">Dietary Quiz</h1>
     </div>
 
-    <div class="question-box" id="question-box">
-        <!-- JavaScript will insert the question here -->
+    <!-- Start Quiz Button -->
+    <div id="start-quiz-section">
+        <button class="start-button" id="start-quiz">Start Quiz Now</button>
     </div>
 
-    <div class="answer-box" id="answer-box">
-        <!-- JavaScript will insert the answers here -->
+    <!-- Question Area (Hidden initially) -->
+    <div class="question-box" id="question-box" style="display: none;">
+        <!-- JavaScript will insert questions here -->
     </div>
 
-    <div class="progress-section">
+    <!-- Answer Area (Hidden initially) -->
+    <div class="answer-box" id="answer-box" style="display: none;">
+        <!-- JavaScript will insert answer options here -->
+    </div>
+
+    <!-- Progress and Timer (Hidden initially) -->
+    <div class="progress-section" id="progress-section" style="display: none;">
         <div class="progress-bar">
             <div class="progress" id="progress"></div>
         </div>
         <div class="timer" id="timer">Time: 00:00</div>
     </div>
 
-    <div class="result-section" id="result-section">
+    <!-- Results Section (Hidden initially) -->
+    <div class="result-section" id="result-section" style="display: none;">
         <h2>Your Score</h2>
         <p id="final-score"></p>
         <button class="button" id="retake-quiz">Retake Quiz</button>
     </div>
 </div>
 
+<!-- JavaScript to Handle Quiz Logic -->
 <script src="quiz.js"></script>
 </body>
 </html>

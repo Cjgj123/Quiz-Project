@@ -1,121 +1,119 @@
-styles.css 
-/* General styles: These are used for all the pages */
+/* General Styles */
 body, html {
- font-family: Arial, Helvetica, sans-serif;
- margin: 0;
- padding: 0;
- background-color: #e5e0d5;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
 }
 
-
-
-
-
-/* Navigation styles: Used for teh top of all the pages */
+/* Navigation */
 nav {
-    background-color: rgb(49, 29, 10);
+    background-color: #003366;
     display: flex;
     justify-content: center;
+    padding: 10px;
 }
+
 nav ul {
-    list-style-type: none ;
+    list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
+
 nav li {
-    display: block;
-    padding: 10px;
+    margin: 0 15px;
+}
+
+nav a {
     text-decoration: none;
-    color: #e64d10;
+    color: white;
     font-weight: bold;
 }
-nav li a-hover {
-    background-color: rgb(33, 10, 247);
-    border-radius: 5px;
-}
-nav li a{
-color:white ;
+
+nav a:hover {
+    text-decoration: underline;
 }
 
-/*side-bar*/
-side-bar {
-width: 150px;
-height: 100vh;
-background-color: aqua;
-float: left;
-padding: 20px;
-box-sizing: border-box;
-}
-
-
-/*main content area*/
-.main-question-section{ 
-margin-left: 200px;
-padding: 20px;
-box-sizing: border-box;
-}
-.title-section{
-text-align: center;
-margin-bottom: 50px;
-}
-.question-box{
-    background-color: rgb(255, 0, 0);
+/* Sidebar */
+.sidebar {
+    width: 150px;
+    height: 100vh;
+    background-color: #e0e0e0;
+    float: left;
     padding: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 24px;
+    box-sizing: border-box;
 }
-.answer-box{
-   width:30% ;
-   padding: 20px;
-   background-color: aqua;
-   color: #ffffff;
-   text-align: center;
-   border-radius: 10px;
-   cursor: pointer;
-   font-size: 18px;
-}
-.answer-box.blue{
-    background-color: blue;
-}
-.answer-box.red{
-    background-color: rgb(255, 0, 0);
-}
-.answer-box.green{
-    background-color: rgb(0, 255, 0);
-}
-.answer-box.pink{
-    background-color: rgb(255, 0, 255);
-}
-.answer-box.hover{
-    background-color: rgb(251, 255, 0);
-    transition: background-color 0.3s ease;
-}
-.progres-section{
- margin-top: 20px;
 
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
 }
-.progres-bar{
-    width: 100%;
-    background-color: #ddd;
-    height: 20px;
-    border-radius: 10px;
-    overflow: hidden;
+
+.sidebar li {
     margin-bottom: 10px;
 }
-.progres{
-    width: 0;
-    height: 20px;
-    background-color: aquamarine;
-    transition: width 0.5s ease;
+
+.sidebar a {
+    text-decoration: none;
+    color: #003366;
 }
-.timer{
+
+.sidebar a:hover {
+    text-decoration: underline;
+}/* Sidebar */
+side-bar {
+    width: 150px;
+    height: 100vh;
+    background-color: #f0f0f0;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .bottom-links {
+    position: absolute;
+    bottom: 20px; /* Positioning the links at the bottom of the sidebar */
+    left: 20px;   /* Padding from the left for a neat alignment */
+  }
+  
+  .bottom-links p, .bottom-links a {
+    margin-bottom: 5px; /* Adding a little space between the items */
+  }
+  
+
+/* Main Content Section */
+.main-question-section {
+    margin-left: 220px; /* Increased margin for more spacing */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-title {
+    font-size: 36px;
+    color: #003366;
+}
+
+.quiz-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0066cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.quiz-button:hover {
+    background-color: #004c99;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
     font-size: 18px;
-    color: brown;
-    text-align: center;
+    color: #555;
 }
-
-
-
-
